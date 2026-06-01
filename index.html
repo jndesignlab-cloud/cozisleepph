@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cozi Sleep | Comfort for Every Night</title>
+  <meta name="description" content="Cozi Sleep PH — breathable, durable mattresses and pillows designed for cozy nights and brighter days." />
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+  <style>
+    :root {
+      --blue-900: #04306f;
+      --blue-800: #064995;
+      --blue-700: #075fbd;
+      --blue-600: #0878df;
+      --blue-500: #1595f2;
+      --blue-100: #eaf7ff;
+      --blue-50: #f5fbff;
+      --text: #061f48;
+      --muted: #58708f;
+      --white: #ffffff;
+      --line: rgba(7, 95, 189, 0.14);
+      --shadow: 0 22px 60px rgba(4, 48, 111, 0.16);
+      --soft-shadow: 0 14px 36px rgba(4, 48, 111, 0.10);
+      --radius-lg: 28px;
+      --radius-md: 20px;
+      --radius-sm: 14px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(32, 194, 255, 0.25), transparent 32rem),
+        radial-gradient(circle at top right, rgba(8, 120, 223, 0.22), transparent 28rem),
+        linear-gradient(180deg, #ffffff 0%, #f4fbff 42%, #eaf6ff 100%);
+      min-height: 100vh;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .page {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 28px 0 40px;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      border-radius: 36px;
+      padding: 34px 22px 28px;
+      background:
+        linear-gradient(145deg, rgba(255,255,255,0.94), rgba(235,248,255,0.94)),
+        url("assets/storefront.jpg") center/cover no-repeat;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(255,255,255,0.86);
+      isolation: isolate;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.93) 0%, rgba(255,255,255,0.78) 58%, rgba(235,247,255,0.94) 100%);
+      z-index: -2;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 360px;
+      height: 360px;
+      right: -140px;
+      top: -120px;
+      background: radial-gradient(circle, rgba(21,149,242,0.34), transparent 68%);
+      z-index: -1;
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 26px;
+      align-items: center;
+    }
+
+    .brand-block {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 18px;
+    }
+
+    .logo-wrap {
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--white);
+      box-shadow: var(--soft-shadow);
+      border: 1px solid rgba(7, 95, 189, 0.12);
+    }
+
+    .logo-wrap img {
+      width: 76px;
+      height: 76px;
+      object-fit: contain;
+      border-radius: 50%;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      width: fit-content;
+      padding: 9px 14px;
+      border-radius: 999px;
+      background: rgba(7, 95, 189, 0.10);
+      color: var(--blue-800);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 680px;
+      font-size: clamp(42px, 8vw, 82px);
+      line-height: 0.93;
+      letter-spacing: -0.075em;
+      color: var(--blue-900);
+      font-weight: 900;
+    }
+
+    .hero-copy {
+      max-width: 620px;
+      color: #173c70;
+      font-size: clamp(16px, 2vw, 20px);
+      line-height: 1.65;
+      font-weight: 500;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 6px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border-radius: 999px;
+      padding: 15px 20px;
+      font-weight: 800;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+      border: 1px solid transparent;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--blue-700), var(--blue-500));
+      color: white;
+      box-shadow: 0 16px 34px rgba(8, 120, 223, 0.28);
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.84);
+      color: var(--blue-800);
+      border-color: rgba(7, 95, 189, 0.18);
+      box-shadow: var(--soft-shadow);
+    }
+
+    .hero-card {
+      position: relative;
+      padding: 16px;
+      border-radius: 30px;
+      background: rgba(255, 255, 255, 0.68);
+      border: 1px solid rgba(255,255,255,0.8);
+      box-shadow: var(--soft-shadow);
+      backdrop-filter: blur(16px);
+    }
+
+    .hero-card img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      border-radius: 24px;
+      object-position: top center;
+    }
+
+    .floating-note {
+      position: absolute;
+      left: 28px;
+      bottom: 28px;
+      width: min(280px, calc(100% - 56px));
+      padding: 16px;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.92);
+      box-shadow: var(--soft-shadow);
+      border: 1px solid rgba(7, 95, 189, 0.12);
+    }
+
+    .floating-note strong {
+      display: block;
+      color: var(--blue-900);
+      font-size: 15px;
+      margin-bottom: 4px;
+    }
+
+    .floating-note span {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .social-strip {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin: 26px 0 18px;
+    }
+
+    .social-icon {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      border-radius: 16px;
+      background: white;
+      border: 1px solid var(--line);
+      box-shadow: var(--soft-shadow);
+      color: var(--blue-800);
+      font-size: 21px;
+      transition: transform 0.2s ease, color 0.2s ease;
+    }
+
+    .social-icon:hover {
+      transform: translateY(-3px);
+      color: var(--blue-500);
+    }
+
+    .section {
+      margin-top: 22px;
+    }
+
+    .link-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .link-card {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 18px 20px;
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.88);
+      border: 1px solid var(--line);
+      box-shadow: var(--soft-shadow);
+      transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .link-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(8, 120, 223, 0.36);
+      box-shadow: 0 18px 42px rgba(4, 48, 111, 0.14);
+    }
+
+    .link-left {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .link-icon {
+      width: 46px;
+      height: 46px;
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #eef9ff, #d8efff);
+      color: var(--blue-800);
+      font-size: 21px;
+    }
+
+    .link-text strong {
+      display: block;
+      font-size: 16px;
+      color: var(--blue-900);
+      margin-bottom: 4px;
+    }
+
+    .link-text span {
+      display: block;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.4;
+    }
+
+    .arrow {
+      color: var(--blue-600);
+      opacity: 0.85;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 16px;
+      margin: 44px 0 18px;
+    }
+
+    .section-heading h2 {
+      color: var(--blue-900);
+      font-size: clamp(28px, 5vw, 48px);
+      line-height: 1;
+      letter-spacing: -0.055em;
+      font-weight: 900;
+    }
+
+    .section-heading p {
+      max-width: 380px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .product-card {
+      position: relative;
+      overflow: hidden;
+      min-height: 270px;
+      padding: 18px;
+      border-radius: 26px;
+      background: white;
+      border: 1px solid var(--line);
+      box-shadow: var(--soft-shadow);
+    }
+
+    .product-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(160deg, rgba(21,149,242,0.12), transparent 46%);
+      pointer-events: none;
+    }
+
+    .product-tag {
+      display: inline-flex;
+      position: relative;
+      z-index: 1;
+      padding: 6px 10px;
+      border-radius: 999px;
+      color: var(--blue-800);
+      background: rgba(7, 95, 189, 0.10);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .product-card h3 {
+      position: relative;
+      z-index: 1;
+      margin-top: 16px;
+      color: var(--blue-900);
+      font-size: 26px;
+      line-height: 1;
+      letter-spacing: -0.045em;
+      font-weight: 900;
+    }
+
+    .product-card p {
+      position: relative;
+      z-index: 1;
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .product-art {
+      position: absolute;
+      right: -18px;
+      bottom: -8px;
+      width: 78%;
+      max-height: 150px;
+      object-fit: contain;
+      filter: drop-shadow(0 14px 20px rgba(4,48,111,0.15));
+    }
+
+    .trust {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 16px;
+      align-items: center;
+      margin-top: 18px;
+      padding: 26px;
+      border-radius: 30px;
+      background:
+        radial-gradient(circle at right, rgba(21,149,242,0.16), transparent 42%),
+        linear-gradient(135deg, #ffffff, #edf8ff);
+      border: 1px solid var(--line);
+      box-shadow: var(--soft-shadow);
+    }
+
+    .trust h2 {
+      color: var(--blue-900);
+      font-size: clamp(28px, 5vw, 46px);
+      line-height: 1;
+      letter-spacing: -0.055em;
+      font-weight: 900;
+    }
+
+    .trust p {
+      margin-top: 12px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .badge-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .badge {
+      min-height: 132px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      text-align: center;
+      padding: 16px;
+      border-radius: 22px;
+      background: white;
+      border: 1px solid var(--line);
+    }
+
+    .badge i {
+      width: 46px;
+      height: 46px;
+      display: grid;
+      place-items: center;
+      border-radius: 16px;
+      background: rgba(7, 95, 189, 0.10);
+      color: var(--blue-700);
+      font-size: 21px;
+    }
+
+    .badge strong {
+      color: var(--blue-900);
+      font-size: 14px;
+      line-height: 1.3;
+    }
+
+    footer {
+      margin-top: 28px;
+      padding: 26px 8px 0;
+      text-align: center;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    footer strong {
+      color: var(--blue-900);
+    }
+
+    .back-to-top {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      width: 46px;
+      height: 46px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: white;
+      background: linear-gradient(135deg, var(--blue-800), var(--blue-500));
+      box-shadow: 0 14px 28px rgba(4, 48, 111, 0.24);
+      z-index: 20;
+    }
+
+    @media (max-width: 920px) {
+      .hero-inner,
+      .trust {
+        grid-template-columns: 1fr;
+      }
+
+      .brand-block {
+        align-items: center;
+        text-align: center;
+      }
+
+      .hero-actions {
+        justify-content: center;
+      }
+
+      .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .page {
+        width: min(100% - 22px, 1120px);
+        padding-top: 12px;
+      }
+
+      .hero {
+        border-radius: 30px;
+        padding: 26px 16px 18px;
+      }
+
+      .logo-wrap {
+        width: 86px;
+        height: 86px;
+      }
+
+      .logo-wrap img {
+        width: 68px;
+        height: 68px;
+      }
+
+      .hero-copy {
+        font-size: 15px;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .hero-card {
+        padding: 10px;
+        border-radius: 24px;
+      }
+
+      .hero-card img {
+        border-radius: 19px;
+        aspect-ratio: 1 / 0.9;
+      }
+
+      .floating-note {
+        position: relative;
+        left: auto;
+        bottom: auto;
+        width: 100%;
+        margin-top: 10px;
+      }
+
+      .link-grid,
+      .product-grid,
+      .badge-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .link-card {
+        min-height: 76px;
+        padding: 16px;
+      }
+
+      .product-card {
+        min-height: 235px;
+      }
+
+      .product-art {
+        width: 60%;
+      }
+
+      .trust {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page" id="top">
+    <section class="hero" aria-label="Cozi Sleep landing page hero">
+      <div class="hero-inner">
+        <div class="brand-block">
+          <div class="logo-wrap" aria-label="Cozi Sleep logo">
+            <!-- Replace this with your official logo file -->
+            <img src="assets/cozi-sleep-logo.png" alt="Cozi Sleep logo" />
+          </div>
+
+          <span class="eyebrow"><i class="fa-solid fa-cloud-moon"></i> Comfort for Every Night</span>
+
+          <h1>Cozi Sleep</h1>
+
+          <p class="hero-copy">
+            Cozy nights, brighter days. Breathable, durable mattresses designed for the Philippine climate — premium comfort without the premium price.
+          </p>
+
+          <div class="hero-actions">
+            <!-- Replace # with your actual Lazada and Shopee links -->
+            <a href="#" class="btn btn-primary" target="_blank" rel="noopener">
+              <i class="fa-solid fa-bag-shopping"></i>
+              Shop Online
+            </a>
+            <a href="#products" class="btn btn-secondary">
+              View Products
+              <i class="fa-solid fa-arrow-down"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <!-- Replace with your uploaded storefront/brand preview image -->
+          <img src="assets/storefront.jpg" alt="Cozi Sleep mattresses and pillows storefront preview" />
+          <div class="floating-note">
+            <strong>Thoughtfully designed sleep essentials</strong>
+            <span>Mattresses and pillows made for better rest, everyday comfort, and dependable quality.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="social-strip" aria-label="Social media links">
+      <a class="social-icon" href="#" target="_blank" rel="noopener" aria-label="TikTok">
+        <i class="fa-brands fa-tiktok"></i>
+      </a>
+      <a class="social-icon" href="#" target="_blank" rel="noopener" aria-label="Instagram">
+        <i class="fa-brands fa-instagram"></i>
+      </a>
+      <a class="social-icon" href="#" target="_blank" rel="noopener" aria-label="Facebook">
+        <i class="fa-brands fa-facebook-f"></i>
+      </a>
+    </div>
+
+    <section class="section" aria-label="Main links">
+      <div class="link-grid">
+        <!-- Replace all href="#" with the actual links from Cozi Sleep -->
+        <a class="link-card" href="#" target="_blank" rel="noopener">
+          <div class="link-left">
+            <div class="link-icon"><i class="fa-brands fa-tiktok"></i></div>
+            <div class="link-text">
+              <strong>Follow us on TikTok</strong>
+              <span>Watch cozy sleep tips, product highlights, and updates.</span>
+            </div>
+          </div>
+          <i class="fa-solid fa-arrow-up-right-from-square arrow"></i>
+        </a>
+
+        <a class="link-card" href="#" target="_blank" rel="noopener">
+          <div class="link-left">
+            <div class="link-icon"><i class="fa-brands fa-instagram"></i></div>
+            <div class="link-text">
+              <strong>Follow us on Instagram</strong>
+              <span>@cozi.sleep · Product visuals, promos, and brand updates.</span>
+            </div>
+          </div>
+          <i class="fa-solid fa-arrow-up-right-from-square arrow"></i>
+        </a>
+
+        <a class="link-card" href="#" target="_blank" rel="noopener">
+          <div class="link-left">
+            <div class="link-icon"><i class="fa-brands fa-facebook-f"></i></div>
+            <div class="link-text">
+              <strong>Follow us on Facebook</strong>
+              <span>Connect with Cozi Sleep PH and message us anytime.</span>
+            </div>
+          </div>
+          <i class="fa-solid fa-arrow-up-right-from-square arrow"></i>
+        </a>
+
+        <a class="link-card" href="#" target="_blank" rel="noopener">
+          <div class="link-left">
+            <div class="link-icon"><i class="fa-solid fa-store"></i></div>
+            <div class="link-text">
+              <strong>Shop on Lazada</strong>
+              <span>Cozi Sleep PH Philippines Official Online Store.</span>
+            </div>
+          </div>
+          <i class="fa-solid fa-arrow-up-right-from-square arrow"></i>
+        </a>
+
+        <a class="link-card" href="#" target="_blank" rel="noopener">
+          <div class="link-left">
+            <div class="link-icon"><i class="fa-solid fa-bag-shopping"></i></div>
+            <div class="link-text">
+              <strong>Shop on Shopee</strong>
+              <span>Browse mattresses, pillows, deals, and official listings.</span>
+            </div>
+          </div>
+          <i class="fa-solid fa-arrow-up-right-from-square arrow"></i>
+        </a>
+      </div>
+    </section>
+
+    <section class="section" id="products" aria-label="Product preview">
+      <div class="section-heading">
+        <h2>Sleep essentials<br>for every night.</h2>
+        <p>Explore Cozi Sleep mattresses and pillows designed for comfort, breathability, support, and everyday rest.</p>
+      </div>
+
+      <div class="product-grid">
+        <article class="product-card">
+          <span class="product-tag">Mattress</span>
+          <h3>Nimbus</h3>
+          <p>12-Inch Hybrid Mattress with pocket spring and high-density foam support.</p>
+          <img class="product-art" src="assets/nimbus.png" alt="Cozi Sleep Nimbus mattress" />
+        </article>
+
+        <article class="product-card">
+          <span class="product-tag">Mattress</span>
+          <h3>Cumulus</h3>
+          <p>10-Inch Hybrid Mattress crafted for everyday comfort and balanced support.</p>
+          <img class="product-art" src="assets/cumulus.png" alt="Cozi Sleep Cumulus mattress" />
+        </article>
+
+        <article class="product-card">
+          <span class="product-tag">Mattress</span>
+          <h3>Cirrus</h3>
+          <p>6-Inch Memory Foam Mattress for soft comfort and reliable support.</p>
+          <img class="product-art" src="assets/cirrus.png" alt="Cozi Sleep Cirrus mattress" />
+        </article>
+
+        <article class="product-card">
+          <span class="product-tag">Pillow</span>
+          <h3>Pillow</h3>
+          <p>Cozy everyday support with soft fiber fill and breathable fabric.</p>
+          <img class="product-art" src="assets/pillow.png" alt="Cozi Sleep pillow" />
+        </article>
+      </div>
+    </section>
+
+    <section class="trust" aria-label="Trust badges">
+      <div>
+        <h2>Certified quality you can trust.</h2>
+        <p>Crafted with safety-certified materials and backed by dependable durability for long-lasting everyday comfort.</p>
+      </div>
+
+      <div class="badge-grid">
+        <div class="badge">
+          <i class="fa-solid fa-certificate"></i>
+          <strong>OEKO-TEX<br>Standard 100</strong>
+        </div>
+        <div class="badge">
+          <i class="fa-solid fa-shield-heart"></i>
+          <strong>CertiPUR-US<br>Certified</strong>
+        </div>
+        <div class="badge">
+          <i class="fa-solid fa-award"></i>
+          <strong>10 Years<br>Warranty</strong>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p><strong>Cozi Sleep PH</strong> — Comfort for every night.</p>
+    </footer>
+  </main>
+
+  <a class="back-to-top" href="#top" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </a>
+</body>
+</html>
